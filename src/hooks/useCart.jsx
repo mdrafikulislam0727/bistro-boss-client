@@ -6,9 +6,7 @@ const useCart = () =>{
     const {user, loading}=useAuth()
     console.log(user)
     const token =localStorage.getItem('access-token')
-    if(!user){
-        return [[], '']
-    }
+    
     const [axiosSecure] = useAxiosSecure();
 
     const {refetch, data: cart = [] } = useQuery({
